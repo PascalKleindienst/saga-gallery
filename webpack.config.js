@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const pkg = require('./package.json');
 
 module.exports = {
     name: 'js',
@@ -30,6 +31,7 @@ module.exports = {
         }),
         new ExtractTextPlugin('saga-gallery.min.css', {
             allChunks: true
-        })
+        }),
+        new webpack.BannerPlugin(pkg.name + " v" + pkg.version + " | " + pkg.author + " | " + pkg.license + " | " + pkg.homepage)
     ]
 };
