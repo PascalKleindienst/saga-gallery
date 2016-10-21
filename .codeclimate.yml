@@ -1,0 +1,17 @@
+engines:
+  duplication:
+    enabled: true
+  eslint:
+    enabled: true
+  fixme:
+    enabled: true
+  scss-lint:
+    enabled: true
+ratings:
+  paths:
+    - "**.js"
+    - "**.scss"
+exclude_paths: 
+  - node_modules/**/*
+  - dist/**/*
+  - examples/**/*
