@@ -1,8 +1,9 @@
 engines:
   duplication:
     enabled: true
-    languages:
-      - javascript
+    config:
+      languages:
+        - javascript
   eslint:
     enabled: true
   fixme:
