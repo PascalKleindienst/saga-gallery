@@ -1,6 +1,8 @@
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
+    name: 'js',
     entry: './src/saga.js',
     output: {
         path: './dist',
@@ -11,6 +13,10 @@ module.exports = {
             test: /\.js$/,
             exclude: /node_modules/,
             loader: 'babel-loader'
+        },
+        {
+            test: /\.scss$/,
+            loader: ExtractTextPlugin.extract('css!sass')
         }]
     },
     plugins: [
@@ -22,5 +28,8 @@ module.exports = {
                 comments: false,
             },
         }),
+        new ExtractTextPlugin('saga-gallery.min.css', {
+            allChunks: true
+        })
     ]
- };
+};
