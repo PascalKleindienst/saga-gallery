@@ -8,16 +8,15 @@ const createControls = (el) => {
         ul.appendChild(control);
     });
         
-    ul.classList.add('saga-gallery-nav');
+    ul.classList.add('saga-slider-nav');
         
     let close = document.createElement('a');
-    close.text = 'Close';
     close.href = '#0';
     close.classList.add('saga-close');
 
     el.classList.add('saga-gallery');
     el.appendChild(ul);
     el.appendChild(close);
-}
+};
 
 export { createControls };

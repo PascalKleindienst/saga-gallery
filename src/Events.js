@@ -10,7 +10,7 @@ const isKey = (e, key) => {
     var code = window.event ? e.keyCode : e.which;
 
     if (key in keys) {
-        return code == keys[key];
+        return code === keys[key];
     }
 
     return false;
@@ -19,7 +19,6 @@ const isKey = (e, key) => {
 const bindEvents = (gallery) => {
     // open
     $1('.saga-slider', gallery.el).addEventListener('click', e => {
-        console.log(e);
         e.preventDefault();
         gallery.open();
     });
@@ -37,7 +36,7 @@ const bindEvents = (gallery) => {
     });
     
     // next
-    $1('.saga-gallery-nav .saga-next', gallery.el).addEventListener('click', e => {
+    $1('.saga-slider-nav .saga-next', gallery.el).addEventListener('click', e => {
         e.preventDefault();
         gallery.next();
     });
@@ -48,7 +47,7 @@ const bindEvents = (gallery) => {
     });
 
     // prev
-    $1('.saga-gallery-nav .saga-prev', gallery.el).addEventListener('click', e => {
+    $1('.saga-slider-nav .saga-prev', gallery.el).addEventListener('click', e => {
         e.preventDefault();
         gallery.prev();
     });

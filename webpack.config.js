@@ -23,11 +23,11 @@ module.exports = {
     plugins: [
         new webpack.optimize.UglifyJsPlugin({
             compress: {
-                warnings: false,
+                warnings: false
             },
             output: {
-                comments: false,
-            },
+                comments: false
+            }
         }),
         new ExtractTextPlugin('saga-gallery.min.css', {
             allChunks: true

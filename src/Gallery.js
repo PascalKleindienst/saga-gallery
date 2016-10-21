@@ -9,9 +9,9 @@ const slide = (direction, gallery) => {
     
     if (gallery.isOpen()) {
 
-        const filter = el => el.nodeName.toLowerCase() == 'li';
+        const filter = el => el.nodeName.toLowerCase() === 'li';
         let selected = $1('.saga-slider > .selected', gallery.el);
-        let siblings = direction == 'next' ? getNextSiblings(selected, filter) : getPreviousSiblings(selected, filter);
+        let siblings = direction === 'next' ? getNextSiblings(selected, filter) : getPreviousSiblings(selected, filter);
                     
         if (siblings.length) {
             selected.classList.remove('selected');
@@ -19,7 +19,7 @@ const slide = (direction, gallery) => {
         }
 
         else if (gallery.options.loop) {
-            siblings = direction == 'next' ? getPreviousSiblings(selected, filter) : getNextSiblings(selected, filter);
+            siblings = direction === 'next' ? getPreviousSiblings(selected, filter) : getNextSiblings(selected, filter);
 
             if (siblings.length) {
                 selected.classList.remove('selected');
@@ -27,7 +27,7 @@ const slide = (direction, gallery) => {
             }
         }
     }
-}
+};
 
 export default class Gallery {
     constructor(selector, options) {

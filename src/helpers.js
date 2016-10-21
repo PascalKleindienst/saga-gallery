@@ -11,14 +11,14 @@ function $1(selector, context) {
 // this helper accepts a filter function
 function getNextSiblings(el, filter) {
     var siblings = [];
-    while (el = el.nextSibling) { if (!filter || filter(el)) siblings.push(el); }
+    while ((el = el.nextSibling)) { if (!filter || filter(el)) siblings.push(el); }
     return siblings;
 }
 
 // this helper accepts a filter function
 function getPreviousSiblings(el, filter) {
     var siblings = [];
-    while (el = el.previousSibling) { if (!filter || filter(el)) siblings.push(el); }
+    while ((el = el.previousSibling)) { if (!filter || filter(el)) siblings.push(el); }
     return siblings;
 }
 
