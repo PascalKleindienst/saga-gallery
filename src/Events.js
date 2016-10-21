@@ -37,20 +37,26 @@ const call = (e, cb) => {
  * Bind Events to gallery
  */
 const bindEvents = (gallery) => {
-    // open
-    $1('.saga-slider', gallery.el).addEventListener('click', e => call(e, gallery.open.bind(gallery)));
+    // click events
+    const clickEvents = [
+        { cb: gallery.open, selector: '.saga-slider' },
+        { cb: gallery.close, selector: '.saga-close' },
+        { cb: gallery.next, selector: '.saga-slider-nav .saga-next' },
+        { cb: gallery.prev, selector: '.saga-slider-nav .saga-prev' }
+    ];
+    clickEvents.forEach(el => {
+        $1(el.selector, gallery.el).addEventListener('click', e => call(e, el.cb.bind(gallery)));
+    });
 
-    // close
-    $1('.saga-close', gallery.el).addEventListener('click', e => call(e, gallery.close.bind(gallery)));
-    document.addEventListener('keydown', e => isKey(e, 'esc') && gallery.close());
-    
-    // next
-    $1('.saga-slider-nav .saga-next', gallery.el).addEventListener('click',e => call(e, gallery.next.bind(gallery)));
-    document.addEventListener('keydown', e => isKey(e, 'right') && gallery.next());
-
-    // prev
-    $1('.saga-slider-nav .saga-prev', gallery.el).addEventListener('click', e => call(e, gallery.prev.bind(gallery)));
-    document.addEventListener('keydown', e => isKey(e, 'left') && gallery.prev());
+    // key events
+    const keyEvents = [
+        { cb: gallery.close, key: 'esc' },
+        { cb: gallery.next, key: 'right' },
+        { cb: gallery.prev, key: 'left' }
+    ];
+    keyEvents.forEach(el => {
+        document.addEventListener('keydown', e => isKey(e, el.key) && el.cb.call(gallery));
+    });
  };
 
  export { bindEvents };
