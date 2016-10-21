@@ -1,27 +1,24 @@
-// select a list of matching elements, context is optional
-function $(selector, context) {
-    return (context || document).querySelectorAll(selector);
-}
+/**
+ * Selectors
+ */
+const $ = (selector, context) => (context || document).querySelectorAll(selector);
+const $1 = (selector, context) => (context || document).querySelector(selector);
 
-// select the first match only, context is optional
-function $1(selector, context) {
-    return (context || document).querySelector(selector);
-}
-
-// this helper accepts a filter function
-function getNextSiblings(el, filter) {
+/**
+ * Sibling Helpers
+ */
+function siblings(el, filter, type) {
     var siblings = [];
-    while ((el = el.nextSibling)) { if (!filter || filter(el)) siblings.push(el); }
+    while ((el = el[type])) { if (!filter || filter(el)) siblings.push(el); }
     return siblings;
 }
 
-// this helper accepts a filter function
-function getPreviousSiblings(el, filter) {
-    var siblings = [];
-    while ((el = el.previousSibling)) { if (!filter || filter(el)) siblings.push(el); }
-    return siblings;
-}
+const getNextSiblings = (el, filter) => siblings(el, filter, 'nextSibling');
+const getPreviousSiblings = (el, filter) => siblings(el, filter, 'previousSibling');
 
+/**
+ * Misc.
+ */
 function extend(obj, src) {
     Object.keys(src).forEach(function(key) { obj[key] = src[key]; });
     return obj;
