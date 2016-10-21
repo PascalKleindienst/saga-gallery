@@ -8,18 +8,23 @@ function $1(selector, context) {
     return (context || document).querySelector(selector);
 }
 
-function hasClass(el, className) {
-    return el.classList ? el.classList.contains(className) : new RegExp('\\b'+ className+'\\b').test(el.className);
+// this helper accepts a filter function
+function getNextSiblings(el, filter) {
+    var siblings = [];
+    while (el = el.nextSibling) { if (!filter || filter(el)) siblings.push(el); }
+    return siblings;
 }
 
-function addClass(el, className) {
-    if (el.classList) el.classList.add(className);
-    else if (!hasClass(el, className)) el.className += ' ' + className;
+// this helper accepts a filter function
+function getPreviousSiblings(el, filter) {
+    var siblings = [];
+    while (el = el.previousSibling) { if (!filter || filter(el)) siblings.push(el); }
+    return siblings;
 }
 
-// function removeClass(el, className) {
-//     if (el.classList) el.classList.remove(className);
-//     else el.className = el.className.replace(new RegExp('\\b'+ className+'\\b', 'g'), '');
-// }
+function extend(obj, src) {
+    Object.keys(src).forEach(function(key) { obj[key] = src[key]; });
+    return obj;
+}
 
-export { $, $1, hasClass, addClass };
+export { $, $1, extend, getNextSiblings, getPreviousSiblings };

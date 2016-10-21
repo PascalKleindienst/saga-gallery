@@ -1,34 +1,71 @@
-import { $, addClass } from './helpers';
+import { $1, extend, getNextSiblings, getPreviousSiblings } from './helpers';
+import { createControls } from './Markup';
+import { bindEvents } from './Events';
+
+const slide = (direction, gallery) => {
+    if (direction !== 'next' && direction !== 'prev') {
+        return false;
+    }
+    
+    if (gallery.isOpen()) {
+
+        const filter = el => el.nodeName.toLowerCase() == 'li';
+        let selected = $1('.saga-slider > .selected', gallery.el);
+        let siblings = direction == 'next' ? getNextSiblings(selected, filter) : getPreviousSiblings(selected, filter);
+                    
+        if (siblings.length) {
+            selected.classList.remove('selected');
+            siblings[0].classList.add('selected');
+        }
+
+        else if (gallery.options.loop) {
+            siblings = direction == 'next' ? getPreviousSiblings(selected, filter) : getNextSiblings(selected, filter);
+
+            if (siblings.length) {
+                selected.classList.remove('selected');
+                siblings[siblings.length-1].classList.add('selected');
+            }
+        }
+    }
+}
 
 export default class Gallery {
     constructor(selector, options) {
-        this.el = $(selector);
-        this.createControls();
-        console.log('Init Gallery', this.el);
+        this.el = document.getElementById(selector);
+        this.options = extend({
+            onClose: null,
+            onOpen: null,
+            loop: true
+        }, options);
+
+        createControls(this.el);
+        bindEvents(this);
     }
 
-    createControls() {
-        let ul = document.createElement('ul');
-        let controls = ['prev', 'next'];
+    open() {
+        this.el.classList.add('saga-slider-active');
 
-        controls.forEach( el => {
-            let control =  document.createElement('li');
-            control.innerHTML = `<a href="#0" class="saga-${el}">${el}</a>`;
-            ul.appendChild(control);
-        });
-        
-        addClass(ul, 'saga-gallery-nav');
-        
-        let close = document.createElement('a');
-        close.text = 'Close';
-        close.href = '#0';
-        addClass(close, 'saga-close');
+        if (typeof this.options.onOpen === 'function') {
+            this.options.onOpen.call(this);
+        }
+    }
 
-        this.el.forEach( (el, i) => {
-            addClass(el, 'saga-gallery');
-            el.setAttribute('data-gallery', i);
-            el.appendChild(ul);
-            el.appendChild(close);
-        });
+    close() {
+        this.el.classList.remove('saga-slider-active');
+        if (typeof this.options.onClose === 'function') {
+            this.options.onClose.call(this);
+        }
+    }
+
+    isOpen() {
+        return this.el.classList.contains('saga-slider-active');
+    }
+
+    next() {
+        slide('next', this);
+    }
+
+    prev() {
+        slide('prev', this);
     }
 }
