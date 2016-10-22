@@ -20,7 +20,7 @@
 
     <section class="main-content">
       <h1>
-<a id="saga-gallery-" class="anchor" href="#saga-gallery-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Saga Gallery <a href="https://codeclimate.com/github/PascalKleindienst/saga-gallery"><img src="https://img.shields.io/codeclimate/github/PascalKleindienst/saga-gallery.svg?style=flat-square" alt="Code Climate"></a>
+<a id="saga-gallery-----" class="anchor" href="#saga-gallery-----" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Saga Gallery <a href="https://www.npmjs.com/package/saga-gallery"><img src="https://img.shields.io/npm/v/saga-gallery.svg?style=flat-square" alt="version"></a> <a href="https://www.npmjs.com/package/saga-gallery"><img src="https://img.shields.io/npm/dt/saga-gallery.svg?style=flat-square" alt="Installs"></a> <a href="https://github.com/PascalKleindienst/saga-gallery/archive/master.zip"><img src="https://img.shields.io/github/downloads/PascalKleindienst/saga-gallery/total.svg?style=flat-square" alt="Downloads"></a> <a href="https://raw.githubusercontent.com/PascalKleindienst/saga-gallery/master/LICENSE"><img src="https://img.shields.io/github/license/PascalKleindienst/saga-gallery.svg?style=flat-square" alt="license"></a> <a href="https://codeclimate.com/github/PascalKleindienst/saga-gallery"><img src="https://img.shields.io/codeclimate/github/PascalKleindienst/saga-gallery.svg?style=flat-square" alt="Code Climate"></a>
 </h1>
 
 <p>Saga Gallery is a simple and small lightbox gallery written in pure JavaScript.</p>
@@ -33,6 +33,16 @@
 
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<h3>
+<a id="bower" class="anchor" href="#bower" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Bower</h3>
+
+<div class="highlight highlight-source-shell"><pre>bower install saga-gallery --save</pre></div>
+
+<h3>
+<a id="npm" class="anchor" href="#npm" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NPM</h3>
+
+<div class="highlight highlight-source-shell"><pre>npm install saga-gallery --save</pre></div>
 
 <p>Include the saga-gallery CSS style in your head tags.</p>
 
@@ -48,21 +58,18 @@
 <h3>
 <a id="html" class="anchor" href="#html" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>HTML</h3>
 
-<p>The Gallery is an unordered list with the class of <code>saga-slider</code> in a container <em>(div, section, etc)</em>
-A <code>li</code> with the class of <code>selected</code> the element which is displayed and 
-upon clicking it the lightbox gallery opens.</p>
+<p>The Gallery is an unordered list with. A <code>li</code> with the class of <code>selected</code> specifies the element which is displayed. If none is specified the first element will be used.
+Upon clicking the image the lightbox gallery opens.</p>
 
-<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">section</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>foo<span class="pl-pds">"</span></span>&gt;
-    &lt;<span class="pl-ent">ul</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>saga-slider<span class="pl-pds">"</span></span>&gt;
-        &lt;<span class="pl-ent">li</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>selected<span class="pl-pds">"</span></span>&gt;
-            &lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>http://placehold.it/350x350/2ecc71/ecf0f1<span class="pl-pds">"</span></span> <span class="pl-e">alt</span>=<span class="pl-s"><span class="pl-pds">"</span>Image 1<span class="pl-pds">"</span></span>&gt;
-            &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>saga-description<span class="pl-pds">"</span></span>&gt;&lt;<span class="pl-ent">h3</span>&gt;Lorem&lt;/<span class="pl-ent">h3</span>&gt;&lt;<span class="pl-ent">p</span>&gt;Ipsum dolor sit amet&lt;/<span class="pl-ent">p</span>&gt;&lt;/<span class="pl-ent">div</span>&gt;
-        &lt;/<span class="pl-ent">li</span>&gt;
-        &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>http://placehold.it/350x350/3498db/ecf0f1<span class="pl-pds">"</span></span> <span class="pl-e">alt</span>=<span class="pl-s"><span class="pl-pds">"</span>Image 2<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
-        &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>http://placehold.it/350x350/e67e22/ecf0f1<span class="pl-pds">"</span></span> <span class="pl-e">alt</span>=<span class="pl-s"><span class="pl-pds">"</span>Image 3<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
-        &lt;<span class="pl-ent">li</span> &gt;&lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>http://placehold.it/350x350/e74c3c/ecf0f1<span class="pl-pds">"</span></span> <span class="pl-e">alt</span>=<span class="pl-s"><span class="pl-pds">"</span>Image 4<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
-    &lt;/<span class="pl-ent">ul</span>&gt;
-&lt;/<span class="pl-ent">section</span>&gt;</pre></div>
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">ul</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>foo<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">li</span>&gt;
+        &lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>http://placehold.it/350x350/2ecc71/ecf0f1<span class="pl-pds">"</span></span> <span class="pl-e">alt</span>=<span class="pl-s"><span class="pl-pds">"</span>Image 1<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>saga-description<span class="pl-pds">"</span></span>&gt;&lt;<span class="pl-ent">h3</span>&gt;Lorem&lt;/<span class="pl-ent">h3</span>&gt;&lt;<span class="pl-ent">p</span>&gt;Ipsum dolor sit amet&lt;/<span class="pl-ent">p</span>&gt;&lt;/<span class="pl-ent">div</span>&gt;
+    &lt;/<span class="pl-ent">li</span>&gt;
+    &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>http://placehold.it/350x350/3498db/ecf0f1<span class="pl-pds">"</span></span> <span class="pl-e">alt</span>=<span class="pl-s"><span class="pl-pds">"</span>Image 2<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+    &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>http://placehold.it/350x350/e67e22/ecf0f1<span class="pl-pds">"</span></span> <span class="pl-e">alt</span>=<span class="pl-s"><span class="pl-pds">"</span>Image 3<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+    &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>http://placehold.it/350x350/e74c3c/ecf0f1<span class="pl-pds">"</span></span> <span class="pl-e">alt</span>=<span class="pl-s"><span class="pl-pds">"</span>Image 4<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+&lt;/<span class="pl-ent">ul</span>&gt;</pre></div>
 
 <h3>
 <a id="use-the-plugin" class="anchor" href="#use-the-plugin" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Use The Plugin</h3>
