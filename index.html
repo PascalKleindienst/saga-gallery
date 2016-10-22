@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Saga Gallery by PascalKleindienst</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Saga Gallery</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/PascalKleindienst/saga-gallery" class="btn">View on GitHub</a>
+      <a href="https://github.com/PascalKleindienst/saga-gallery/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/PascalKleindienst/saga-gallery/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="saga-gallery" class="anchor" href="#saga-gallery" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Saga Gallery</h1>
+
+<p><a href="https://codeclimate.com/github/PascalKleindienst/saga-gallery"><img src="https://img.shields.io/codeclimate/github/PascalKleindienst/saga-gallery.svg?style=flat-square" alt="Code Climate"></a></p>
+
+<p>Saga Gallery is a simple and small lightbox gallery written in pure JavaScript.</p>
+
+<ul>
+<li>No dependencies required</li>
+<li>Simple API</li>
+<li>No extra files to download</li>
+</ul>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Include the saga-gallery CSS style in your head tags.</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>dist/saga-gallery.min.css<span class="pl-pds">"</span></span>&gt;</pre></div>
+
+<p>Include the saga-gallery script in your head tags or right before your body closing tag.</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>dist/saga-gallery.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<h3>
+<a id="html" class="anchor" href="#html" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>HTML</h3>
+
+<p>The Gallery is an unordered list with the class of <code>saga-slider</code> in a container <em>(div, section, etc)</em>
+A <code>li</code> with the class of <code>selected</code> the element which is displayed and 
+upon clicking it the lightbox gallery opens.</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">section</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>foo<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">ul</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>saga-slider<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">li</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>selected<span class="pl-pds">"</span></span>&gt;
+            &lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>http://placehold.it/350x350/2ecc71/ecf0f1<span class="pl-pds">"</span></span> <span class="pl-e">alt</span>=<span class="pl-s"><span class="pl-pds">"</span>Image 1<span class="pl-pds">"</span></span>&gt;
+            &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>saga-description<span class="pl-pds">"</span></span>&gt;&lt;<span class="pl-ent">h3</span>&gt;Lorem&lt;/<span class="pl-ent">h3</span>&gt;&lt;<span class="pl-ent">p</span>&gt;Ipsum dolor sit amet&lt;/<span class="pl-ent">p</span>&gt;&lt;/<span class="pl-ent">div</span>&gt;
+        &lt;/<span class="pl-ent">li</span>&gt;
+        &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>http://placehold.it/350x350/3498db/ecf0f1<span class="pl-pds">"</span></span> <span class="pl-e">alt</span>=<span class="pl-s"><span class="pl-pds">"</span>Image 2<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+        &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>http://placehold.it/350x350/e67e22/ecf0f1<span class="pl-pds">"</span></span> <span class="pl-e">alt</span>=<span class="pl-s"><span class="pl-pds">"</span>Image 3<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+        &lt;<span class="pl-ent">li</span> &gt;&lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>http://placehold.it/350x350/e74c3c/ecf0f1<span class="pl-pds">"</span></span> <span class="pl-e">alt</span>=<span class="pl-s"><span class="pl-pds">"</span>Image 4<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+    &lt;/<span class="pl-ent">ul</span>&gt;
+&lt;/<span class="pl-ent">section</span>&gt;</pre></div>
+
+<h3>
+<a id="use-the-plugin" class="anchor" href="#use-the-plugin" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Use The Plugin</h3>
+
+<p>Bind the gallery to a container element with id of <code>foo</code></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c">// instanciate new gallery</span>
+<span class="pl-k">var</span> gallery <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">SagaGallery</span>(<span class="pl-s"><span class="pl-pds">'</span>foo<span class="pl-pds">'</span></span>, {
+    <span class="pl-en">onOpen</span><span class="pl-k">:</span> <span class="pl-k">function</span>() {
+        <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>gallery open<span class="pl-pds">'</span></span>);
+    },
+    <span class="pl-en">onClose</span><span class="pl-k">:</span> <span class="pl-k">function</span>() {
+        <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>gallery closed<span class="pl-pds">'</span></span>);
+    },
+    loop<span class="pl-k">:</span> <span class="pl-c1">false</span>
+});
+
+<span class="pl-c">// open gallery</span>
+<span class="pl-smi">gallery</span>.<span class="pl-c1">open</span>();
+
+<span class="pl-c">// close gallery</span>
+<span class="pl-smi">gallery</span>.<span class="pl-c1">close</span>();
+
+<span class="pl-c">// check if gallery is opened</span>
+<span class="pl-k">if</span> (<span class="pl-smi">gallery</span>.<span class="pl-en">isOpen</span>()) 
+    <span class="pl-c">// do something ...</span>
+
+<span class="pl-c">// display next image</span>
+<span class="pl-smi">gallery</span>.<span class="pl-c1">next</span>();
+
+<span class="pl-c">// display prev image</span>
+<span class="pl-smi">gallery</span>.<span class="pl-en">prev</span>();</pre></div>
+
+<h3>
+<a id="options" class="anchor" href="#options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Options</h3>
+
+<p>Default Options</p>
+
+<div class="highlight highlight-source-js"><pre>{
+    onClose<span class="pl-k">:</span> <span class="pl-c1">null</span>, <span class="pl-c">// called after closing</span>
+    onOpen<span class="pl-k">:</span> <span class="pl-c1">null</span>,  <span class="pl-c">// called after opening</span>
+    loop<span class="pl-k">:</span> <span class="pl-c1">true</span>     <span class="pl-c">// true will return to the first image after the last image is reached</span>
+}</pre></div>
+
+<h2>
+<a id="api" class="anchor" href="#api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h2>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>open()</td>
+<td>Open gallery and execute callback if exist</td>
+</tr>
+<tr>
+<td>close()</td>
+<td>Close gallery and execute callback if exist</td>
+</tr>
+<tr>
+<td>isOpen()</td>
+<td>Return true if gallery is opened</td>
+</tr>
+<tr>
+<td>next()</td>
+<td>Display next image in gallery</td>
+</tr>
+<tr>
+<td>prev()</td>
+<td>Display previous image in gallery</td>
+</tr>
+</tbody>
+</table>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/PascalKleindienst/saga-gallery">Saga Gallery</a> is maintained by <a href="https://github.com/PascalKleindienst">PascalKleindienst</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
