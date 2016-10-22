@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Saga-Gallery Examples</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
+        <link href="../dist/saga-gallery.min.css" rel="stylesheet">
+    </head>
+    <body>
+    
+    <ul id="gallery">
+        <li>
+            <img src="http://placehold.it/350x350/2ecc71/ecf0f1" alt="Product Image 1">
+            <div class="saga-description"><h3>Lorem</h3><p>Ipsum dolor sit amet</p></div>
+        </li>
+        <li><img src="http://placehold.it/350x350/3498db/ecf0f1" alt="Product Image 2"></li>
+        <li><img src="http://placehold.it/350x350/e67e22/ecf0f1" alt="Product Image 3"></li>
+        <li><img src="http://placehold.it/350x350/e74c3c/ecf0f1" alt="Product Image 4"></li>
+    </ul>
+    
+    <script src="../dist/saga-gallery.min.js"></script>
+    <script>
+        var gallery = new SagaGallery('gallery', {
+            onOpen: function() {
+                console.log('open');
+            }
+        });
+    </script>
+    </body>
+</html>
