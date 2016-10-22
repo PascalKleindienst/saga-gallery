@@ -1,5 +1,4 @@
-# Saga Gallery
-[![Code Climate](https://img.shields.io/codeclimate/github/PascalKleindienst/saga-gallery.svg?style=flat-square)](https://codeclimate.com/github/PascalKleindienst/saga-gallery)
+# Saga Gallery [![version][ico-version]][link-version] [![Installs][ico-installs]][link-installs] [![Downloads][ico-downloads]][link-downloads] [![license][ico-license]][link-license] [![Code Climate][ico-cc]][link-cc]
 
 Saga Gallery is a simple and small lightbox gallery written in pure JavaScript.
 
@@ -8,6 +7,16 @@ Saga Gallery is a simple and small lightbox gallery written in pure JavaScript.
 * No extra files to download
 
 ## Installation
+### Bower
+```bash
+bower install saga-gallery --save
+```
+
+### NPM
+```bash
+npm install saga-gallery --save
+```
+
 Include the saga-gallery CSS style in your head tags.
 ```HTML
 <link rel="stylesheet" href="dist/saga-gallery.min.css">
@@ -17,7 +26,6 @@ Include the saga-gallery script in your head tags or right before your body clos
 ```HTML
 <script src="dist/saga-gallery.min.js"></script>
 ```
-
 
 ## Usage
 ### HTML
@@ -84,3 +92,15 @@ Default Options
 | isOpen() | Return true if gallery is opened            |
 | next()   | Display next image in gallery               |
 | prev()   | Display previous image in gallery           |
+
+[ico-cc]: https://img.shields.io/codeclimate/github/PascalKleindienst/saga-gallery.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/github/downloads/PascalKleindienst/saga-gallery/total.svg?style=flat-square
+[ico-installs]: https://img.shields.io/npm/dt/saga-gallery.svg?style=flat-square
+[ico-version]: https://img.shields.io/npm/v/saga-gallery.svg?style=flat-square
+[ico-license]: https://img.shields.io/github/license/PascalKleindienst/saga-gallery.svg?style=flat-square
+
+[link-cc]: https://codeclimate.com/github/PascalKleindienst/saga-gallery
+[link-downloads]: https://github.com/PascalKleindienst/saga-gallery/archive/master.zip
+[link-installs]: https://www.npmjs.com/package/saga-gallery
+[link-version]: https://www.npmjs.com/package/saga-gallery
+[link-license]: https://raw.githubusercontent.com/PascalKleindienst/saga-gallery/master/LICENSE
