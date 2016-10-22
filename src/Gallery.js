@@ -7,7 +7,7 @@ import { bindEvents } from './Events';
  */
 function slide (direction, gallery) {
     // slide only when gallery is opened and direction is next/prev
-    if (gallery.isOpen() && (direction !== 'next' || direction !== 'prev')) {
+    if (gallery.isOpen() && (direction === 'next' || direction === 'prev')) {
         const filter = el => el.nodeName.toLowerCase() === 'li';
         let index = 0;
         let selected = $1('.saga-slider > .selected', gallery.el);
@@ -38,9 +38,6 @@ function slide (direction, gallery) {
  * Gallery Class
  */
 export default class Gallery {
-    /**
-     * 
-     */
     constructor(id, options) {
         this.el = document.getElementById(id);
         this.options = extend({
