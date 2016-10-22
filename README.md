@@ -21,21 +21,18 @@ Include the saga-gallery script in your head tags or right before your body clos
 
 ## Usage
 ### HTML
-The Gallery is an unordered list with the class of `saga-slider` in a container *(div, section, etc)*
-A `li` with the class of `selected` the element which is displayed and 
-upon clicking it the lightbox gallery opens.
+The Gallery is an unordered list with. A `li` with the class of `selected` specifies the element which is displayed. If none is specified the first element will be used.
+Upon clicking the image the lightbox gallery opens.
 ```HTML
-<section id="foo">
-    <ul class="saga-slider">
-        <li class="selected">
-            <img src="http://placehold.it/350x350/2ecc71/ecf0f1" alt="Image 1">
-            <div class="saga-description"><h3>Lorem</h3><p>Ipsum dolor sit amet</p></div>
-        </li>
-        <li><img src="http://placehold.it/350x350/3498db/ecf0f1" alt="Image 2"></li>
-        <li><img src="http://placehold.it/350x350/e67e22/ecf0f1" alt="Image 3"></li>
-        <li ><img src="http://placehold.it/350x350/e74c3c/ecf0f1" alt="Image 4"></li>
-    </ul>
-</section>
+<ul id="foo">
+    <li>
+        <img src="http://placehold.it/350x350/2ecc71/ecf0f1" alt="Image 1">
+        <div class="saga-description"><h3>Lorem</h3><p>Ipsum dolor sit amet</p></div>
+    </li>
+    <li><img src="http://placehold.it/350x350/3498db/ecf0f1" alt="Image 2"></li>
+    <li><img src="http://placehold.it/350x350/e67e22/ecf0f1" alt="Image 3"></li>
+    <li><img src="http://placehold.it/350x350/e74c3c/ecf0f1" alt="Image 4"></li>
+</ul>
 ```
 
 ### Use The Plugin

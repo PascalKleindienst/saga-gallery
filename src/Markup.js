@@ -1,3 +1,19 @@
+/**
+ * Wrap gallery with container
+ */
+const createContainer = (el) => {
+    let container = document.createElement('div');
+    container.classList.add('saga-gallery');
+    el.classList.add('saga-slider');
+
+    // wrap el with container
+    el.parentNode.insertBefore(container, el);
+    container.appendChild(el);
+};
+
+/**
+ * Create Control Elements
+ */
 const createControls = (el) => {
     let ul = document.createElement('ul');
     let controls = ['prev', 'next'];
@@ -19,4 +35,4 @@ const createControls = (el) => {
     el.appendChild(close);
 };
 
-export { createControls };
+export { createControls, createContainer, setSelected };

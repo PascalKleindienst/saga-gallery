@@ -1,5 +1,5 @@
 import { $1, extend, getNextSiblings, getPreviousSiblings } from './helpers';
-import { createControls } from './Markup';
+import { createControls, createContainer } from './Markup';
 import { bindEvents } from './Events';
 
 /**
@@ -39,15 +39,26 @@ function slide (direction, gallery) {
  */
 export default class Gallery {
     constructor(id, options) {
-        this.el = document.getElementById(id);
+        // create needed markup
+        let el = document.getElementById(id);
+        createContainer(el);
+        createControls(el.parentNode);
+        
+        // set selected element if needed
+        if ($1('.selected', el) === null) {
+            $1('li:first-child', el).classList.add('selected');
+        }
+        
+        // save props
+        this.el = el.parentNode;
         this.options = extend({
             onClose: null,
             onOpen: null,
             loop: true
         }, options);
 
-        createControls(this.el);
-        bindEvents(this);
+        // events
+        bindEvents(this);        
     }
 
     open() {
