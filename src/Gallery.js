@@ -3,6 +3,23 @@ import { createControls, createContainer } from './Markup';
 import { bindEvents } from './Events';
 
 /**
+ * Set open / close state of gallery
+ */
+const setState = (open, gallery) => {
+    if (open) {
+        let cb = 'onOpen';
+        gallery.el.classList.add('saga-slider-active');
+    } else {
+        let cb = 'onClose';
+        gallery.el.classList.remove('saga-slider-active');
+    }
+    
+    if (typeof gallery.options[type] === 'function') {
+        return gallery.options[type].call(gallery);
+    }
+};
+
+/**
  * Gallery Class
  */
 export default class Gallery {
@@ -30,19 +47,11 @@ export default class Gallery {
     }
 
     open() {
-        this.el.classList.add('saga-slider-active');
-
-        if (typeof this.options.onOpen === 'function') {
-            this.options.onOpen.call(this);
-        }
+        return setState(true, this);
     }
 
     close() {
-        this.el.classList.remove('saga-slider-active');
-
-        if (typeof this.options.onClose === 'function') {
-            this.options.onClose.call(this);
-        }
+        return setState(false, this);
     }
 
     isOpen() {
