@@ -1,8 +1,8 @@
 {
   "name": "saga-gallery",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.1.0",
+  "description": "A simple and small lightbox gallery written in pure JavaScript",
+  "main": "dist/saga-gallery.min.js",
   "scripts": {
     "build": "webpack --progress --colors --watch",
     "server": "live-server --port=1234 --entry-file=examples/index.html"
@@ -11,7 +11,11 @@
     "type": "git",
     "url": "git+https://github.com/PascalKleindienst/saga-gallery.git"
   },
-  "keywords": [],
+  "keywords": [
+    "gallery",
+    "slider",
+    "lightbox"
+  ],
   "author": "Pascal Kleindienst <mail@pascalkleindienst.de>",
   "license": "MIT",
   "bugs": {
