@@ -1,4 +1,4 @@
- import { $, $1, getNextSiblings, getPreviousSiblings } from './helpers';
+ import { $1 } from './helpers';
 
 /**
  * Used key codes

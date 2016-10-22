@@ -35,4 +35,4 @@ const createControls = (el) => {
     el.appendChild(close);
 };
 
-export { createControls, createContainer, setSelected };
+export { createControls, createContainer };
