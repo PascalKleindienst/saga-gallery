@@ -1,0 +1,22 @@
+{
+  "name": "saga-gallery",
+  "description": "A simple and small lightbox gallery written in pure JavaScript",
+  "main": "dist/saga-gallery.min.js",
+  "authors": [
+    "Pascal Kleindienst <mail@pascalkleindienst.de>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "gallery",
+    "slider",
+    "lightbox"
+  ],
+  "homepage": "https://github.com/PascalKleindienst/saga-gallery",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
