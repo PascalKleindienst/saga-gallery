@@ -1,6 +1,6 @@
 {
   "name": "saga-gallery",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A simple and small lightbox gallery written in pure JavaScript",
   "main": "dist/saga-gallery.min.js",
   "scripts": {
