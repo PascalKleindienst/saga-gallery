@@ -6,16 +6,17 @@ import { bindEvents } from './Events';
  * Set open / close state of gallery
  */
 const setState = (open, gallery) => {
+    let cb;
     if (open) {
-        let cb = 'onOpen';
+        cb = 'onOpen';
         gallery.el.classList.add('saga-slider-active');
     } else {
-        let cb = 'onClose';
+        cb = 'onClose';
         gallery.el.classList.remove('saga-slider-active');
     }
     
-    if (typeof gallery.options[type] === 'function') {
-        return gallery.options[type].call(gallery);
+    if (typeof gallery.options[cb] === 'function') {
+        return gallery.options[cb].call(gallery);
     }
 };
 
