@@ -20,6 +20,7 @@ const getPreviousSiblings = (el, filter) => siblings(el, filter, 'previousSiblin
  * Misc.
  */
 function extend(obj, src) {
+    src = !src ? {} : src;
     Object.keys(src).forEach(function(key) { obj[key] = src[key]; });
     return obj;
 }
