@@ -29,7 +29,7 @@ Include the saga-gallery script in your head tags or right before your body clos
 
 ## Usage
 ### HTML
-The Gallery is an unordered list with. A `li` with the class of `selected` specifies the element which is displayed. If none is specified the first element will be used.
+The Gallery is an unordered list. A `li` with the class of `selected` specifies the element which is displayed. If none is specified the first element will be used.
 Upon clicking the image the lightbox gallery opens.
 ```HTML
 <ul id="foo">
