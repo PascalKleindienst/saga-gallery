@@ -17,7 +17,12 @@ module.exports = {
         },
         {
             test: /\.scss$/,
-            loader: ExtractTextPlugin.extract('css!sass')
+            loader: ExtractTextPlugin.extract('css!sass', { publicPath: '../'})
+        },
+        {
+            test: /\.(jpe?g|png|gif|svg)$/i,
+            loader: 'file',
+            query: { name: 'images/[name].[ext]', publicPath: './' }
         }]
     },
     plugins: [

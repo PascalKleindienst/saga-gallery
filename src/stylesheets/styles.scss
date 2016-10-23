@@ -35,6 +35,7 @@
       z-index: 2;
     }
 
+    // center image
     &::before {
       display: inline-block;
       margin-right: -1px;
@@ -53,6 +54,27 @@
       max-height: 100%;
       vertical-align: middle;
     }
+  }
+
+  // description
+  .saga-description {
+    display: none;
+  }
+
+  // zoom overlay
+  &::after {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity .25s;
+    opacity: 0;
+    z-index: 4;
+    background: $image-overlay;
+    background-size: 48px;
+    width: 100%;
+    height: 100%;
+    content: '';
   }
 }
 
@@ -81,6 +103,7 @@
 .saga-slider-nav {
   list-style: none;
 
+  // Nav Arros
   li {
     position: absolute;
     top: 50%;
@@ -97,12 +120,19 @@
     }
   }
 
+  // Left Arrow
+  li:first-of-type > a::before {
+    content: '\27E8';
+  }
+
+  // nav item
   a {
     display: block;
     transition: opacity .2s 0s, visibility 0s 0s;
     overflow: hidden;
     color: transparent;
 
+    // right arrow
     &::before {
       color: $font-color;
       font-size: 48px;
@@ -114,10 +144,6 @@
       visibility: hidden;
       opacity: 0;
     }
-  }
-
-  li:first-of-type > a::before {
-    content: '\27E8';
   }
 }
 
@@ -146,28 +172,42 @@
       height: 100%;
       text-align: center;
       line-height: 1px;
-
-      .saga-description {
-        position: absolute;
-        bottom: 0;
-        z-index: 9;
-        background: $description-bg;
-        padding: 5px 10px;
-        width: 100%;
-        text-align: left;
-        color: $font-color;
-      }
     }
   }
 
+  // description
+  .selected {
+    .saga-description {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      z-index: 9;
+      background: $description-bg;
+      padding: 5px 10px;
+      width: 100%;
+      text-align: left;
+      color: $font-color;
+    }
+  }
+
+  // close button
   .saga-close {
     display: block;
     visibility: visible;
     opacity: 1;
-    }
+  }
 }
 
 @media only screen and (min-width: 1024px) {
+  .saga-gallery {
+    &:not(.saga-slider-active) {
+      .saga-slider:hover::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  // Slider
   .saga-slider {
     cursor: pointer;
 
@@ -176,6 +216,7 @@
     }
   }
 
+  // Active slider
   .saga-slider-active {
     .saga-slider {
       cursor: auto;
@@ -190,6 +231,7 @@
     }
   }
 
+  // Slider Nav
   .saga-slider-nav {
     li {
       transition: opacity .4s 0s, visibility 0s .4s;
